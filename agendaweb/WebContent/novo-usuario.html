@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Novo usuário</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	</head>
+	<body class="bg-dark">
+		<!-- CABEÇALHO DA PÁGINA -->
+		<div class="bg-info text-white p-2 fluid">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-md-1"><img src="imagens/agenda48.png"></div>
+					<div class="col-md-11"><h1>Agenda Eletrônica</h1><h6>Contatos e Compromisso</h6></div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- FORMULÁRIO DA PÁGINA -->
+		<div class="container mt-5">
+			<form>
+				<div class="card">
+					<div class="card-header">
+						<div class="row align-item-center">
+							<div class="col-md-1"><img src="imagens/useradd48.png"></div>
+							<div class="col-md-11"><h2 class="text-primary">Cadastrar novo usuário</h2></div>
+						</div>
+					</div>
+					<div class="card-body">
+						<div>
+							<fieldset class="form-group">
+								<legend>Dados Gerais</legend>
+								<div class="row">
+									<div class="col-md-6">
+										<label for="nome">Nome:</label>
+										<input class="form-control" type="text" id="nome" name="nome">
+									</div>
+									<div class="col-md-3">
+										<label for="dtNascimento">Dt. Nascimento:</label>
+										<input class="form-control" type="text" id="dtNascimento" name="dtNascimento">
+									</div>
+									<div class="col-md-3">
+										<label for="sexo">Sexo:</label>
+										<input class="form-control" type="text" id="sexo" name="sexo">
+									</div>
+								</div>
+							</fieldset>
+							<fieldset class="form-group">
+								<legend>Dados de acesso</legend>
+								<div class="row">
+									<div class="col-md-6">
+										<label for="email">E-mail:</label>
+										<input class="form-control" type="text" id="email" name="email">
+									</div>
+									<div class="col-md-3">
+										<label for="senha">Senha:</label>
+										<input class="form-control" type="text" id="senha" name="senha">
+									</div>
+									<div class="col-md-3">
+										<label for="repetirSenha">Repetir senha:</label>
+										<input class="form-control" type="text" id="repetirSenha" name="repetirSenha">
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
