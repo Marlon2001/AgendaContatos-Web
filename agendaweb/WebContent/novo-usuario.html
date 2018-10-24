@@ -29,40 +29,48 @@
 					<div class="card-body">
 						<div>
 							<fieldset class="form-group">
-								<legend>Dados Gerais</legend>
+								<legend class="text-primary">Dados Gerais</legend>
 								<div class="row">
-									<div class="col-md-6">
+									<div class="col-md-5">
 										<label for="nome">Nome:</label>
 										<input class="form-control" type="text" id="nome" name="nome">
 									</div>
-									<div class="col-md-3">
+									<div class="col-md-4">
 										<label for="dtNascimento">Dt. Nascimento:</label>
-										<input class="form-control" type="text" id="dtNascimento" name="dtNascimento">
+										<input class="form-control" type="date" id="dtNascimento" name="dtNascimento">
 									</div>
 									<div class="col-md-3">
 										<label for="sexo">Sexo:</label>
-										<input class="form-control" type="text" id="sexo" name="sexo">
+										<select class="form-control" id="sexo" name="sexo">
+											<option>Selecione</option>
+											<option>Feminino</option>
+											<option>Masculino</option>
+										</select>
 									</div>
 								</div>
 							</fieldset>
 							<fieldset class="form-group">
-								<legend>Dados de acesso</legend>
+								<legend class="text-primary">Dados de acesso</legend>
 								<div class="row">
 									<div class="col-md-6">
 										<label for="email">E-mail:</label>
-										<input class="form-control" type="text" id="email" name="email">
+										<input class="form-control" type="email" id="email" name="email">
 									</div>
 									<div class="col-md-3">
 										<label for="senha">Senha:</label>
-										<input class="form-control" type="text" id="senha" name="senha">
+										<input class="form-control" type="password" id="senha" name="senha">
 									</div>
 									<div class="col-md-3">
 										<label for="repetirSenha">Repetir senha:</label>
-										<input class="form-control" type="text" id="repetirSenha" name="repetirSenha">
+										<input class="form-control" type="password" id="repetirSenha" name="repetirSenha">
 									</div>
 								</div>
 							</fieldset>
 						</div>
+					</div>
+					<div class="card-footer">
+						<button class="btn btn-success">Criar usuario</button>
+						<a href="login.html" class="btn btn-warning">Cancelar</a>
 					</div>
 				</div>
 			</form>
