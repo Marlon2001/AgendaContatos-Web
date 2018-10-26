@@ -11,7 +11,7 @@ btnAdicionar.addEventListener("click", () =>{
         var ul = document.querySelector("#erros");
         ul.textContent = "";
         var painelErros = document.querySelector("#painelErros");
-        painelErros.className = "list-group list-group-item list-group-item-warning pl-4";
+        painelErros.className = "list-group list-group-item list-group-item-warning .h5 pl-3";
         
         for(let i=0; i<erros.length; i++){
             var li = document.createElement("li");
@@ -22,8 +22,6 @@ btnAdicionar.addEventListener("click", () =>{
         var tituloAviso = document.querySelector("#avisoErro");
         tituloAviso.textContent = "Não foi possivel cadastrar o usuário, verifique os erros abaixo.";
     }
-    
-    
 });
 
 function obterUsuario(form){
@@ -59,16 +57,12 @@ const getErros = (usuario) =>{
         erros.push("O e-mail é obrigatório.");
     }
     
-    if(usuario.senha1 < 4){
-        erros.push("A senha deve conter pelo menos 4 caracteres.");
-    }
-    
-    if(usuario.senha2 < 4){
-        erros.push("A senha deve conter pelo menos 4 caracteres.");
-    }
-    
     if(usuario.senha1 != usuario.senha2){
         erros.push("A confirmação da senha não confere");
+    }
+    
+	if(usuario.senha1 < 4 || usuario.senha2 < 4){
+        erros.push("As senhas deve conter pelo menos 4 caracteres.");
     }
     
     return erros;
