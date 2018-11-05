@@ -1,13 +1,11 @@
 package br.senai.sp.model;
 
-import java.util.Date;
-
 public class Usuario {
 	private int codUsuario;
 	private String nome;
 	private String sexo;
 	private String email;
-	private Date dtNascimento;
+	private String dtNascimento;
 	private String senha;
 
 	public int getCodUsuario() {
@@ -42,11 +40,11 @@ public class Usuario {
 		this.email = email;
 	}
 
-	public Date getDtNascimento() {
+	public String getDtNascimento() {
 		return dtNascimento;
 	}
 
-	public void setDtNascimento(Date dtNascimento) {
+	public void setDtNascimento(String dtNascimento) {
 		this.dtNascimento = dtNascimento;
 	}
 
