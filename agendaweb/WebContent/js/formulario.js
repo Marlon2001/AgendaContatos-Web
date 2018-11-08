@@ -61,8 +61,8 @@ const getErros = (usuario) =>{
         erros.push("A confirmação da senha não confere");
     }
     
-	if(usuario.senha1 < 4 || usuario.senha2 < 4){
-        erros.push("As senhas deve conter pelo menos 4 caracteres.");
+	if((usuario.senha1.length < 4 || usuario.senha1.length > 8) || (usuario.senha2.length < 4 || usuario.senha2.length > 8)){
+        erros.push("As senhas deve conter entre 4 e 8 caracteres.");
     }
     
     return erros;

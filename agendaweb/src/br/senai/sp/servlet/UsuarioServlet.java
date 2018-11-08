@@ -30,7 +30,7 @@ public class UsuarioServlet extends HttpServlet {
 		usuario.setSenha(request.getParameter("txt-senha"));
 		usuario.setSexo(request.getParameter("combo-sexo"));
 		usuario.setDtNascimento(request.getParameter("txt-nascimento"));
-		
+
 		UsuarioDao dao = new UsuarioDao();
 		dao.setUsuario(usuario);
 		if(dao.gravar()) {
