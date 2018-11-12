@@ -37,6 +37,11 @@ public class UsuarioDao {
 		}
 	}
 	
+	public boolean atualizar() {
+		
+		return false;
+	}
+	
 	public Usuario autenticar(String email, String senha) {
 		String sql = "SELECT * FROM tbl_usuario"
 				+ " WHERE email = ? AND senha = ?";

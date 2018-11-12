@@ -1,6 +1,7 @@
 package br.senai.sp.servlet;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,8 +25,9 @@ public class AutenticarServlet extends HttpServlet {
 		usuario = dao.autenticar(request.getParameter("txt-email"), request.getParameter("txt-password"));
 		
 		if(usuario.getCodUsuario() > 0) {
+			request.getSession().setAttribute("usuario", usuario);;
 			response.sendRedirect("index.jsp");
-		} else {
+		} else {			
 			response.sendRedirect("login.html");
 		}
 	}
