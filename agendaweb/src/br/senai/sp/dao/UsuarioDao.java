@@ -38,8 +38,29 @@ public class UsuarioDao {
 	}
 	
 	public boolean atualizar() {
+		String sql = "UPDATE tbl_usuario "
+				+ "SET nome=?, "
+				+ "email=?, "
+				+ "senha=?, "
+				+ "sexo=?, "
+				+ "dtNascimento=? "
+				+ "WHERE codigo=?";
 		
-		return false;
+		try {	
+			stm = Conexao.getConexao().prepareStatement(sql);
+			stm.setString(1, this.usuario.getNome());
+			stm.setString(2, this.usuario.getEmail());
+			stm.setString(3, this.usuario.getSenha());
+			stm.setString(4, this.usuario.getSexo().substring(0, 1));
+			stm.setString(5, this.usuario.getDtNascimento());
+			stm.setInt(6, this.usuario.getCodUsuario()); 
+			stm.execute();
+			
+			return true;
+		} catch (Exception erro) {
+			erro.printStackTrace();
+			return false;
+		}
 	}
 	
 	public Usuario autenticar(String email, String senha) {

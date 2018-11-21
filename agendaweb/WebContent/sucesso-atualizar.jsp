@@ -33,8 +33,10 @@
 				<!-- COLUNA DIREITA -->
 				<div class="col-md-9">
 					<div class="card">
-						<div class="card-header bg-dark text-white"><h5>Bem-Vindo</h5></div>
-						<div class="card-body"></div>
+						<div class="card-header bg-dark text-white"><h6>SUCESSO!</h6></div>
+						<div class="card-body">
+							<h4>Seus dados foram atualizados com sucesso!</h4>
+						</div>
 						<div class="card-footer"></div>
 					</div>
 				</div>

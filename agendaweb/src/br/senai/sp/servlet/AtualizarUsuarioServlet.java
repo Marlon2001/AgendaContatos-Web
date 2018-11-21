@@ -20,18 +20,18 @@ public class AtualizarUsuarioServlet extends HttpServlet {
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Usuario usuario = new Usuario();
+		usuario = (Usuario) request.getSession().getAttribute("usuario");
 		usuario.setNome(request.getParameter("txt-nome"));
 		usuario.setEmail(request.getParameter("txt-email"));
+		usuario.setSexo(request.getParameter("combo-sexo").substring(0, 1));
 		usuario.setSenha(request.getParameter("txt-senha"));
-		usuario.setSexo(request.getParameter("combo-sexo"));
 		usuario.setDtNascimento(request.getParameter("txt-nascimento"));
-
 		UsuarioDao dao = new UsuarioDao();
 		dao.setUsuario(usuario);
 		if(dao.atualizar()) {
-			response.sendRedirect("sucesso.html");
+			response.sendRedirect("sucesso-atualizar.jsp");
 		}else {
-			response.sendRedirect("novo-usuario.html");
+			response.sendRedirect("atualizar-usuario.jsp");
 		}
 	}
 
