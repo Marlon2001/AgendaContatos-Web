@@ -41,9 +41,9 @@
 				<div class="col-md-9">
 					<div class="card">
 						<div class="card-header bg-dark text-white row">
-							<div class="col-md-10"><h5>Meus Contatos</h5></div>
-							<div class="col-md-2"><a href="cadastrar-contato.jsp">Novo Contato</a></div>
-						</div>
+							<div class="col-md-8"><h5>Meus Contatos</h5></div>
+							<div class="col-md-4 text-right"><a class="text-white" href="cadastrar-contato.jsp">Adicionar novo contato</a></div>
+						</div>	
 						<div class="card-body">
 							<table class="table table-bordered table-dark table-sm table-hover">
 								<thead>
@@ -51,14 +51,16 @@
 									<th>Nome</th>
 									<th>E-mail</th>
 									<th>Telefone</th>
+									<th></th>
 								</thead>
 								<tbody>
 									<% for(Contato c : contatos){	%>
 									<tr>
-										<th><%= c.getCodigo() %></th>
-										<td><%= c.getNome()%></td>
+										<th><%= String.format("%06d", c.getCodigo()) %></th>
+										<td><a class="text-white" href="ConsultarContatoServlet?codigo=<%= c.getCodigo() %>"><%= c.getNome()%></a></td>
 										<td><%= c.getEmail()%></td>		
 										<td><%= c.getTelefone()%></td>
+										<td><a title="Excluir contato" href="confirmar-exclusao.jsp?codigo=<%= c.getCodigo() %>&nome=<%= c.getNome() %>"><img src="imagens/icon_delete.png"></a></td>
 									</tr>
 									<% } %>
 								</tbody>

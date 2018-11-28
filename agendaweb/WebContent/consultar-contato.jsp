@@ -1,9 +1,13 @@
+<%@page import="br.senai.sp.model.Contato"%>
 <%@page import="br.senai.sp.model.Usuario"%>
 <%@page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
     
 <% 
 	Usuario usuario = new Usuario();
 	usuario = (Usuario) session.getAttribute("usuario");
+	Contato contato = (Contato) session.getAttribute("contato");
+	session.removeAttribute("contato");
+	
 	if (usuario == null){
 		response.sendRedirect("login.html");
 	}else{
@@ -12,7 +16,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<title>Agenda Elêtronica</title>
@@ -33,14 +36,14 @@
 				<!-- COLUNA DIREITA -->
 				<div class="col-md-9">
 					<div class="card">
-						<div class="card-header bg-dark text-white"><h5>Cadastrar Contato</h5></div>
+						<div class="card-header bg-dark text-white"><h5>Consultar Contato</h5></div>
 						<div class="card-body">
-							<form action="CadastrarContatoServlet" method="post" id="form-contato">
+							<form action="AtualizarContatoServlet" method="post" id="form-contato">
 								<div class="card">
 									<div class="card-header">
 										<div class="row align-item-center">
 											<div class="col-md-1"><img src="imagens/useradd48.png"></div>
-											<div class="col-md-11"><h2 class="text-primary">Adicionar novo contato</h2></div>
+											<div class="col-md-11"><h2 class="text-primary">Consultar contato</h2></div>
 										</div>
 									</div>
 									<div class="card-body">
@@ -54,23 +57,24 @@
 												<div class="row">
 													<div class="col-md-4">
 														<label for="txt-nome">Nome:</label>
-														<input class="form-control" type="text" id="txt-nome" name="txt-nome">
+														<input class="invisible" type="text" id="txt-codigo" name="txt-codigo" value="<%= contato.getCodigo() %>" hidden>
+														<input class="form-control" type="text" id="txt-nome" name="txt-nome" value="<%= contato.getNome() %>">
 													</div>
 													<div class="col-md-4">
 														<label for="txt-email">E-mail:</label>
-														<input class="form-control" type="email" id="txt-email" name="txt-email">
+														<input class="form-control" type="email" id="txt-email" name="txt-email" value="<%= contato.getEmail() %>">
 													</div>
 													<div class="col-md-4">
 														<label for="txt-telefone">Telefone:</label>
-														<input class="form-control" type="text" id="txt-telefone" name="txt-telefone">
+														<input class="form-control" type="text" id="txt-telefone" name="txt-telefone" value="<%= contato.getTelefone() %>">
 													</div>
 												</div>
 											</fieldset>
 										</div>
 									</div>
 									<div class="card-footer">
-										<button class="btn btn-success" id="btn-adicionar">Cadastrar contato</button>
-										<a href="cadastrar-contato.jsp" class="btn btn-warning">Cancelar</a>
+										<button class="btn btn-success" id="btn-adicionar">Atualizar contato</button>
+										<a href="contatos.jsp" class="btn btn-warning">Cancelar</a>
 									</div>
 								</div>
 							</form>
@@ -79,7 +83,7 @@
 				</div>
 			</div>
 		</div>
-		<script type="text/javascript" src="js/contato.js"></script>
+		<script type="text/javascript" src="js/consultar-contato.js"></script>
 	</body>
 </html>
 <% } %>

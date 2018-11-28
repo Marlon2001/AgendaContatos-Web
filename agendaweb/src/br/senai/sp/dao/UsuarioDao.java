@@ -3,8 +3,6 @@ package br.senai.sp.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import com.sun.org.apache.xerces.internal.util.SymbolTable;
-
 import br.senai.sp.model.Usuario;
 
 public class UsuarioDao {

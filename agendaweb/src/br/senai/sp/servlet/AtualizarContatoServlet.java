@@ -11,29 +11,29 @@ import br.senai.sp.dao.ContatoDAO;
 import br.senai.sp.model.Contato;
 import br.senai.sp.model.Usuario;
 
-@WebServlet("/CadastrarContatoServlet")
-public class CadastrarContatoServlet extends HttpServlet {
+@WebServlet("/AtualizarContatoServlet")
+public class AtualizarContatoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-    public CadastrarContatoServlet() {
+	
+    public AtualizarContatoServlet() {
         super();
     }
-    
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	Contato contato = new Contato();
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Contato contato = new Contato();
 		ContatoDAO dao = new ContatoDAO();
-		Usuario usuario = (Usuario) request.getSession().getAttribute("usuario");
-		
-		contato.setUsuario(usuario);
+		int codigo = Integer.parseInt(request.getParameter("txt-codigo"));
+
 		contato.setNome(request.getParameter("txt-nome"));
-		contato.setTelefone(request.getParameter("txt-telefone"));
 		contato.setEmail(request.getParameter("txt-email"));
+		contato.setTelefone(request.getParameter("txt-telefone"));
 		
 		dao.setContato(contato);
-		if(dao.gravar()) {
+		if(dao.atualizar(codigo)) {
 			response.sendRedirect("contatos.jsp");
 		}else {
-			response.sendRedirect("cadastrar-contato.jsp");;
+			response.sendRedirect("contatos.jsp");
 		}
-    }
+	}
+
 }
