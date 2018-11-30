@@ -23,9 +23,9 @@ public class ExcluirContatoServlet extends HttpServlet {
 		int codigo = Integer.parseInt(request.getParameter("txt-codigo"));
 		
 		if(dao.deletar(codigo)) {
-			System.out.println("Contato deletado");
+			response.sendRedirect("contatos.jsp");
 		}else {
-			System.out.println("Contato não deletado");
+			response.sendRedirect("erro-deletar.jsp");
 		}
 		
 	}

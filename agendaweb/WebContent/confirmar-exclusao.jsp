@@ -46,13 +46,27 @@
 							<div class="col-md-12"><h5>Exclusão de contato</h5></div>
 						</div>	
 						<div class="card-body">
-							<form action="ExcluirContatoServlet?codigo<%= codigo %>&nome<%= nome %>" method="get">
+							<form action="ExcluirContatoServlet" method="get">
 								
+								<div class="card">
+									<div class="card-header row bg-danger">
+											<div class="col-md-1 pt-1"><img src="imagens/icon_alert.png"></div>
+											<div class="col-md-11 text-left"><h1>Atenção!</h1></div>
+									</div>
+									<div class="card-body ">
+										<h3 class="text-success"> Confirmar a exclusão do contato abaixo?</h3>
+										<h5 class="text-danger pt-4"><%=nome%></h5>
+										<h6 class="text-warning pt-4"><span class="font-weight-bold">OBS: </span>Após a confirmação desta ação, não poderá ser desfeita</h6>
+										<input class="invisible" type="text" id="txt-codigo" name="txt-codigo" value="<%=codigo%>" hidden="hidden">
+									</div>
+									<div class="card-footer"></div>
+								</div>
+								
+								<div class="card-footer">
+									<button class="btn btn-danger" id="btn-deletar">Confirmar exclusão do contato</button>
+									<a href="contatos.jsp" class="btn btn-success">Cancelar</a>
+								</div>
 							</form>
-						</div>
-						<div class="card-footer">
-							<button class="btn btn-danger" id="btn-deletar">Confirmar exclusão do contato</button>
-							<a href="contatos.jsp" class="btn btn-success">Cancelar</a>
 						</div>
 					</div>
 				</div>
