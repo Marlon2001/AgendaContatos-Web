@@ -1,7 +1,5 @@
 package br.senai.sp.model;
 
-import java.sql.Date;
-
 public class Compromisso {
 	private int cod_compromisso;
 	private int cod_usuario;

@@ -17,8 +17,7 @@ if (usuario == null){
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<meta charset="ISO-8859-1">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<title>Agenda Elêtronica</title>
 	</head>
@@ -71,7 +70,7 @@ if (usuario == null){
 												<div class="col-md-4">
 													<label for="txt-data">Data:</label>
 													<input class="form-control" type="date" id="txt-data" name="txt-data" value="<%= c.getData() %>">
-													<input class="form-control" type="text" id="txt-codigo" name="txt-codigo" value="<%= c.getCod_compromisso() %>" hidden>
+													<input class="form-control" type="text" id="txt-codigo" name="txt-codigo" value="<%= c.getCod_compromisso() %>" hidden="hidden">
 												</div>
 												<div class="col-md-2">
 													<label for="txt-time">Hora inicio:</label>

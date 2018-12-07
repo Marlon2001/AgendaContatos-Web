@@ -57,7 +57,7 @@
 												<div class="row">
 													<div class="col-md-4">
 														<label for="txt-nome">Nome:</label>
-														<input class="invisible" type="text" id="txt-codigo" name="txt-codigo" value="<%= contato.getCodigo() %>" hidden>
+														<input class="invisible" type="text" id="txt-codigo" name="txt-codigo" value="<%= contato.getCodigo() %>" hidden="hidden">
 														<input class="form-control" type="text" id="txt-nome" name="txt-nome" value="<%= contato.getNome() %>">
 													</div>
 													<div class="col-md-4">

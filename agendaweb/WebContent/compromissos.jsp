@@ -1,3 +1,4 @@
+<%@page import="br.senai.sp.utils.Data"%>
 <%@page import="br.senai.sp.model.Compromisso"%>
 <%@page import="br.senai.sp.dao.CompromissoDAO"%>
 <%@page import="java.util.ArrayList"%>
@@ -20,10 +21,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<title>Agenda Elêtronica</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	</head>
 	<body>
 		<!-- CABEÇALHO DA PAGINA -->
@@ -69,7 +69,7 @@
 									<tr>
 										<th><%= String.format("%06d", c.getCod_compromisso()) %></th>
 										<td><a class="text-white" href="atualizar-compromisso.jsp?codigo=<%= c.getCod_compromisso()%>"><%= c.getTitulo() %></a></td>
-										<td><%= c.getData() %></td>
+										<td><%= Data.converterParaPortugues(Data.converterParaDate(c.getData())) %></td>
 										<td><a class="text-white" href="#"><img src="imagens/icon_block.png"></a></td>
 									</tr>
 									<% } %>

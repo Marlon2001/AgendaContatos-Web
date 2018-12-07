@@ -8,9 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.senai.sp.dao.CompromissoDAO;
-import br.senai.sp.dao.ContatoDAO;
 import br.senai.sp.model.Compromisso;
-import br.senai.sp.model.Contato;
 import br.senai.sp.model.Usuario;
 
 @WebServlet("/CadastrarCompromissoServlet")

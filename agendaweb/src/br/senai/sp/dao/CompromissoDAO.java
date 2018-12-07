@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import br.senai.sp.model.Compromisso;
-import jdk.nashorn.internal.ir.RuntimeNode.Request;
+import br.senai.sp.utils.Data;
 
 public class CompromissoDAO {
 	
@@ -109,20 +109,22 @@ public class CompromissoDAO {
 			rs = stm.executeQuery();
 			
 			if(rs.next()) {
-				compromisso.setCod_compromisso(rs.getInt("cod_compromisso"));
-				compromisso.setTitulo(rs.getString("titulo"));
-				compromisso.setPrioridade(rs.getInt("prioridade"));
-				compromisso.setData(rs.getString("data"));
-				compromisso.setHora_inicio(rs.getString("hora_inicio"));
-				compromisso.setHora_fim(rs.getString("hora_fim"));
-				compromisso.setStatus(rs.getInt("status"));
-				compromisso.setDescricao(rs.getString("descricao"));
+				compromisso = new Compromisso();
+				this.compromisso.setCod_compromisso(rs.getInt("cod_compromisso"));
+				this.compromisso.setTitulo(rs.getString("titulo"));
+				this.compromisso.setPrioridade(rs.getInt("prioridade"));
+				this.compromisso.setData(rs.getString("data"));
+				this.compromisso.setHora_inicio(rs.getString("hora_inicio"));
+				this.compromisso.setHora_fim(rs.getString("hora_fim"));
+				this.compromisso.setStatus(rs.getInt("status"));
+				this.compromisso.setDescricao(rs.getString("descricao"));
 			}
+			System.out.println(Data.converterParaDate(this.compromisso.getData()));
 			
-			return compromisso;
+			return this.compromisso;
 		}catch (Exception e) {
 			e.printStackTrace();
-			return compromisso;
+			return this.compromisso;
 		}
 	}
 }
