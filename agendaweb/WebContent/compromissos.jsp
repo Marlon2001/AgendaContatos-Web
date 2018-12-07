@@ -68,7 +68,7 @@
 									<% for(Compromisso c : compromissos){ %>
 									<tr>
 										<th><%= String.format("%06d", c.getCod_compromisso()) %></th>
-										<td><a class="text-white" href="#"><%= c.getTitulo() %></a></td>
+										<td><a class="text-white" href="atualizar-compromisso.jsp?codigo=<%= c.getCod_compromisso()%>"><%= c.getTitulo() %></a></td>
 										<td><%= c.getData() %></td>
 										<td><a class="text-white" href="#"><img src="imagens/icon_block.png"></a></td>
 									</tr>

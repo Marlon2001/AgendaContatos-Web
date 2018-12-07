@@ -1,5 +1,4 @@
 const combo_status = document.querySelector("#combo-status");
-console.log(combo_status.value)
 combo_status.onchange = () =>{
 	
     if(combo_status.value == 0){
