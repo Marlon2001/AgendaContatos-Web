@@ -70,7 +70,7 @@
 									</div>
 									<div class="card-footer">
 										<button class="btn btn-success" id="btn-adicionar">Cadastrar contato</button>
-										<a href="cadastrar-contato.jsp" class="btn btn-warning">Cancelar</a>
+										<a href="contatos.jsp" class="btn btn-warning">Cancelar</a>
 									</div>
 								</div>
 							</form>

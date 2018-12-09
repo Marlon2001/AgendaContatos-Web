@@ -31,7 +31,7 @@ public class AtualizarContatoServlet extends HttpServlet {
 		if(dao.atualizar(codigo)) {
 			response.sendRedirect("contatos.jsp");
 		}else {
-			response.sendRedirect("contatos.jsp");
+			response.sendRedirect("erro-atualizar-contato.jsp");
 		}
 	}
 

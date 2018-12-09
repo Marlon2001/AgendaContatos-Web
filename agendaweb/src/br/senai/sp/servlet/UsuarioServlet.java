@@ -19,10 +19,6 @@ public class UsuarioServlet extends HttpServlet {
         super();
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Usuario usuario = new Usuario();
 		usuario.setNome(request.getParameter("txt-nome"));

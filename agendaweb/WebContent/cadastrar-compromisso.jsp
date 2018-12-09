@@ -94,7 +94,7 @@
 									</div>
 									<div class="card-footer">
 										<button class="btn btn-success" id="btn-adicionar">Salvar compromisso</button>
-										<a href="compromissos.jsp" class="btn btn-warning">Cancelar</a>
+										<a href="compromissos.jsp?status=0" class="btn btn-warning">Cancelar</a>
 									</div>
 								</div>
 							</form>

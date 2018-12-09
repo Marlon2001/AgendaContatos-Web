@@ -32,7 +32,7 @@ public class AtualizarCompromissoServlet extends HttpServlet {
 		c.setCod_compromisso(Integer.parseInt(request.getParameter("txt-codigo")));
 		dao.setCompromisso(c);
 		if(dao.atualizar()) {
-			response.sendRedirect("compromissos.jsp?status="+c.getStatus());
+			response.sendRedirect("compromissos.jsp?status=0");
 		}else {
 			response.sendRedirect("erro-atualizar-compromisso.jsp");
 		}

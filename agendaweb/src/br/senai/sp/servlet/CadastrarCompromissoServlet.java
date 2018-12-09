@@ -35,9 +35,9 @@ public class CadastrarCompromissoServlet extends HttpServlet {
 		
 		dao.setCompromisso(compromisso);
 		if(dao.gravar()) {
-			response.sendRedirect("compromissos.jsp");
+			response.sendRedirect("compromissos.jsp?status=0");
 		}else {
-			response.sendRedirect("cadastrar-contato.jsp");;
+			response.sendRedirect("erro-cadastrar-compromisso.jsp");;
 		}
     }
 }

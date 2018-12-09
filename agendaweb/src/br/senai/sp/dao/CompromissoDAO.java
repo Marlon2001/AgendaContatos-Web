@@ -5,7 +5,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import br.senai.sp.model.Compromisso;
-import br.senai.sp.utils.Data;
 
 public class CompromissoDAO {
 	
@@ -119,12 +118,29 @@ public class CompromissoDAO {
 				this.compromisso.setStatus(rs.getInt("status"));
 				this.compromisso.setDescricao(rs.getString("descricao"));
 			}
-			System.out.println(Data.converterParaDate(this.compromisso.getData()));
 			
 			return this.compromisso;
 		}catch (Exception e) {
 			e.printStackTrace();
 			return this.compromisso;
+		}
+	}
+	
+	public boolean mudarCompromisso(int codCompromisso, int estadoCompromisso) {
+		String sql = "UPDATE tbl_compromisso "
+				+ "SET status = ? "
+				+ "WHERE cod_compromisso = ?";
+		
+		try {
+			stm = Conexao.getConexao().prepareStatement(sql);
+			stm.setInt(1, estadoCompromisso);
+			stm.setInt(2, codCompromisso);
+			stm.execute();
+			
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return true;
 		}
 	}
 }

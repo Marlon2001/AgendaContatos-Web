@@ -23,7 +23,7 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<title>Agenda Elêtronica</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	</head>
 	<body>
 		<!-- CABEÇALHO DA PAGINA -->
@@ -61,6 +61,7 @@
 								<thead>
 									<th>Código</th>
 									<th>Compromisso</th>
+									<th>Status</th>
 									<th>Data</th>
 									<th></th>
 								</thead>
@@ -69,8 +70,9 @@
 									<tr>
 										<th><%= String.format("%06d", c.getCod_compromisso()) %></th>
 										<td><a class="text-white" href="atualizar-compromisso.jsp?codigo=<%= c.getCod_compromisso()%>"><%= c.getTitulo() %></a></td>
+										<td><%= status == 0 ? "Em andamento" : status == 1 ? "Cancelado" : status == 2 ? "Concluido" : "" %></td>
 										<td><%= Data.converterParaPortugues(Data.converterParaDate(c.getData())) %></td>
-										<td><a class="text-white" href="#"><img src="imagens/icon_block.png"></a></td>
+										<td><a class="text-white" href="<%=status == 0 ? "CancelarCompromissoServlet" : status == 1 ? "EmAndamentoCompromissoServlet" : status == 2 ? "EmAndamentoCompromissoServlet" : ""%>?codigo=<%= c.getCod_compromisso()%>"><img title="<%=status == 0 ? "Cancelar compromisso" : status == 1 ? "Colocar compromisso em andamento" : status == 2 ? "Colocar compromisso em andamento" : "" %>" src="<%=status == 0 ? "imagens/icon_block.png" : status == 1 ? "imagens/icon_active16.png" : status == 2 ? "imagens/icon_active16.png" : ""%>"></a></td>
 									</tr>
 									<% } %>
 								</tbody>
